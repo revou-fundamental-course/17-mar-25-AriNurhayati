@@ -1,66 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katik - AriN</title>
+    <title>Katik - Kalkulator Matematik (ARIN)</title>
 
     <!-- CSS Eksternal-->
-     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <!-- Header -->
     <header class="main-header">
-        <h1>Katik (Kalkulator Matematik)</h1>
+        <h1>KATIK (Kalkulator Matematik)</h1>
     </header>
 
     <!-- Main Content -->
     <main>
         <header>
-            <h1>Welcome to Katik</h1>
+            <h1>Welcome to KATIK</h1>
         </header>
-
-        <p>Hai Sobat Selamat Datang di Katik!</p>
-        <p>kalkulator adalah alat untuk menghitung dari perhitungan sederhana seperti penjumlahan, pengurangan, perkalian dan pembagian sampai kepada kalkulator ilmiah yang dapat menghitung rumus matematika tertentu.
-           Katik adalah sebuah Web Apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar</p>
         
+        <p>Hai Gaes Selamat Datang di KATIK!</p>
+        <p>KATIK adalah aplikasi website sederhana yang dibuat untuk mempermudah proses menghitung luas dan keliling bangun datar persegi dan persegi panjang.</p> 
+        <p>Selamat mencoba!</p>
+
         <!-- Navigasi Fitur -->
         <div class="nav-fitur">
-            <a href="" class="nav-fitur-active">Persegi</a>
-            <a href="" class="nav-fitur-non-active">Persegi Panjang</a>
+            <button onclick="showSection('persegi')" class="nav-fitur-active" id="btn-persegi">Persegi</button>
+            <button onclick="showSection('persegi-panjang')" class="nav-fitur-non-active" id="btn-persegi-panjang">Persegi Panjang</button>
         </div>
 
-        <!-- Section Luas -->
-        <section>
+        <!-- Section Persegi -->
+        <section id="persegi">
+            <h2>Persegi</h2>
+            <div class="section-image persegi"></div>
+
+            <!-- Luas Persegi -->
             <header class="section-header">
-                <h1>Luas Persegi</h1>
+                <h3>Luas Persegi</h3>
             </header>
+            <p class="rumus">🔢 Rumus: <b>L = S × S</b></p>
+            <form id="luas-persegi-form">
+                <label for="sisi-luas">Sisi:</label>
+                <input type="number" id="sisi-luas" required>
+                <button type="submit">Hitung</button>
+                <button type="button" onclick="resetForm('luas-persegi')">Reset</button>
+            </form>
+            <p id="hasil-luas-persegi"></p>
 
-            <!-- Gambar Luas -->
-             <div class="section-image"></div>
-
-            <!-- Konten Perhitungan -->
-            <div class="calculate-content"></div>
+            <!-- Keliling Persegi -->
+            <header class="section-header">
+                <h3>Keliling Persegi</h3>
+            </header>
+            <p class="rumus">🔢 Rumus: <b>K = 4 × S</b></p>
+            <form id="keliling-persegi-form">
+                <label for="sisi-keliling">Sisi:</label>
+                <input type="number" id="sisi-keliling" required>
+                <button type="submit">Hitung</button>
+                <button type="button" onclick="resetForm('keliling-persegi')">Reset</button>
+            </form>
+            <p id="hasil-keliling-persegi"></p>
         </section>
 
-        <!-- Section Keliling -->
-        <section>
+        <!-- Section Persegi Panjang -->
+        <section id="persegi-panjang" style="display: none;">
+            <h2>Persegi Panjang</h2>
+            <div class="section-image persegi-panjang"></div>
+
+            <!-- Luas Persegi Panjang -->
             <header class="section-header">
-                <h1>Keliling Persegi</h1>
+                <h3>Luas Persegi Panjang</h3>
             </header>
+            <p class="rumus">🔢 Rumus: <b>L = P × L</b></p>
+            <form id="luas-pp-form">
+                <div class="input-group-wrapper">
+                <div class="input-group">
+                    <label for="panjang-luas">Panjang:</label>
+                    <input type="number" id="panjang-luas" required>
+                </div>
+                <div class="input-group">
+                    <label for="lebar-luas">Lebar:</label>
+                    <input type="number" id="lebar-luas" required>
+                </div>
+                </div>
+                    <button type="submit">Hitung</button>
+                    <button type="button" onclick="resetForm('luas-pp')">Reset</button>
+            </form>
+            <p id="hasil-luas-pp"></p>
 
-            <!-- Gambar Keliling -->
-             <div class="section-image"></div>
-
-            <!-- Konten Perhitungan -->
-            <div class="calculate-content"></div> 
+            <!-- Keliling Persegi Panjang -->
+            <header class="section-header">
+                <h3>Keliling Persegi Panjang</h3>
+            </header>
+            <p class="rumus">🔢 Rumus: <b>K = 2 × (P + L)</b></p>
+            <form id="keliling-pp-form">
+                <div class="input-group-wrapper">
+                <div class="input-group">
+                    <label for="panjang-keliling">Panjang:</label>
+                    <input type="number" id="panjang-keliling" required>
+                </div>
+                <div class="input-group">
+                    <label for="lebar-keliling">Lebar:</label>
+                    <input type="number" id="lebar-keliling" required>
+                </div>
+                </div>
+                    <button type="submit">Hitung</button>
+                    <button type="button" onclick="resetForm('keliling-pp')">Reset</button>
+            </form>
+            <p id="hasil-keliling-pp"></p>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>Made by AriN@2025</footer>
-</body>
+    <footer>
+        <p>Made by AriN@2025</p>
+    </footer>
 
+    <script src="js/script.js"></script>
+</body>
 </html>

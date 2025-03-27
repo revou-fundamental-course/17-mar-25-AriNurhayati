@@ -1,7 +1,24 @@
 /* Ini CSS Eksternal */
 
+/* Style umum */
 body {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: cornsilk;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 .main-header > h1 {
@@ -11,57 +28,106 @@ body {
     text-align: center;
 }
 
-main {
-    background-color: cornsilk;
-    padding: 16px;
-    text-align: center;
-}
-
 .nav-fitur {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-.nav-fitur > a {
-    color: white;
+/*Button pilihan persegi atau persegi panjang*/
+.nav-fitur button {
+    font-size: 20px;
     padding-top: 16px;
     padding-bottom: 16px;
+    border: none;
+    cursor: pointer;
     width: 50%;
-    align-self: center;
 }
 
 .nav-fitur-active {
     background-color: cornflowerblue;
+    color: white;
+    align-self: center;
 }
 
 .nav-fitur-non-active {
     background-color: darkcyan;
+    color: white;
+    align-self: center;
 }
 
-.section-header {
-    background-color: aquamarine;
-    padding: 16px;
+/*Kolom input angka*/
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
+.input-group input {
+    width: 100px; /* Lebar input lebih kecil */
+    padding: 8px;
+    text-align: center;
+    align-content: center;
+    font-size: 16px;
+}
+
+.input-group-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Jarak antar input */
+    flex-wrap: wrap; /* Agar tetap rapi di layar kecil */
+}
+
+/* Set input agar memiliki lebar yang cukup */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Gambar Persegi & Persegi Panjang*/
 .section-image {
-    background-image: url(../assets/Persegi.png);
-    width: 100px;
-    height: 100px;
-    justify-self: center;
-    background-size: cover;
+    width: 250px;
+    height: 250px;
+    margin: 20px auto;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
 }
 
-.calculate-content {
-    border: 1px solid;
-    height: 300px;
+.persegi {
+    background-image: url("../assets/Persegi.png");
 }
 
-section {
-    margin-top: 16px;
-    margin-bottom: 16px;
+.persegi-panjang {
+    background-image: url("../assets/PersegiPanjang.png");
 }
 
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/*Footer*/
 footer {
+    background-color: aquamarine;
+    color: black;
     text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Responsive */
+@media only screen and (max-width: 400px) {
+    .nav-fitur {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-group-wrapper {
+        flex-direction: column;
+    }
 }
